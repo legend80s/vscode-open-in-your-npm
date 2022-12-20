@@ -16,7 +16,7 @@ const Utils = {
 
   initCommands ( context: vscode.ExtensionContext ) {
 
-    const {commands} = vscode.extensions.getExtension ( 'fabiospampinato.vscode-open-in-npm' ).packageJSON.contributes;
+    const {commands} = vscode.extensions.getExtension ( 'legend80s.vscode-open-in-your-npm' ).packageJSON.contributes;
 
     commands.forEach ( ({ command, title }) => {
 

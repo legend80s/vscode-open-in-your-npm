@@ -6,10 +6,11 @@ import * as openPath from 'open';
 import * as path from 'path';
 import * as vscode from 'vscode';
 import Utils from './utils';
+import { getNpmUrl } from './lib';
 
 /* COMMANDS */
 
-async function open ( pkg?: string | string[] ) {
+async function open ( pkg?: string ) {
 
   /* SELECTIONS */
 
@@ -79,8 +80,9 @@ async function open ( pkg?: string | string[] ) {
   /* OPEN */
 
   if ( pkg ) {
+    const url = getNpmUrl(pkg)
 
-    _.castArray ( pkg ).map ( pkg => openPath ( `https://www.npmjs.com/package/${pkg}` ) );
+    openPath (url) ;
 
   }
 
